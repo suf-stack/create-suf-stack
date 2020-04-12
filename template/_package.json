@@ -1,0 +1,59 @@
+{
+  "name": "*replaceme*",
+  "version": "0.0.1",
+  "description": "*replaceme*",
+  "private": true,
+  "scripts": {
+    "analyze": "nuxt build --config-file ./nuxt.config.js --analyze",
+    "dev-serve": "cross-env NODE_ENV=development env-cmd -f ./.env node server_local.js",
+    "dev": "npm run rollup && npm run dev-serve",
+    "build-prod": "nuxt build --config-file ./nuxt.config.prod.js && npm run rollup",
+    "build-staging": "nuxt build --config-file ./nuxt.config.staging.js && npm run rollup",
+    "gulp-prod": "gulp publish_static_prod",
+    "gulp-staging": "gulp publish_static_staging",
+    "deploy-prod": "npm run build-prod && npm run gulp-prod && serverless deploy --verbose --stage prod",
+    "deploy-staging": "npm run build-staging && npm run gulp-staging && serverless deploy --verbose --stage staging",
+    "logs-prod": "serverless logs --function app --stage prod -t",
+    "logs-staging": "serverless logs --function app --stage staging -t",
+    "rollup": "rollup -c",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "engines": {
+    "node": ">= 10.13"
+  },
+  "dependencies": {
+    "@koa/router": "^8.0.5",
+    "axios": "^0.19.0",
+    "bunyan": "^1.8.12",
+    "env-cmd": "^10.0.1",
+    "koa": "^2.5.2",
+    "nuxt-start": "^2.11.0",
+    "serverless-http": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.2",
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.1.2",
+    "gulp": "^4.0.2",
+    "gulp-awspublish": "^4.1.0",
+    "gulp-rename": "^2.0.0",
+    "nuxt": "^2.11.0",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-copy-assets": "^2.0.1",
+    "serverless": "^1.60.4",
+    "serverless-prune-plugin": "^1.4.0"
+  }
+}

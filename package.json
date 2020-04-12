@@ -1,0 +1,37 @@
+{
+  "name": "create-suf-stack",
+  "version": "0.0.1",
+  "description": "scaffolding tool for suf-stack web apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suf-stack/create-suf-stack.git"
+  },
+  "author": "Brad Ito <phlogisticfugu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suf-stack/create-suf-stack/issues"
+  },
+  "homepage": "https://github.com/suf-stack/create-suf-stack#readme",
+  "dependencies": {
+    "cac": "^6.5.8",
+    "chalk": "^4.0.0",
+    "cross-spawn": "^7.0.2",
+    "envinfo": "^7.5.0",
+    "glob": "^7.1.6",
+    "lodash": "^4.17.15",
+    "sao": "^1.7.0",
+    "superb": "^4.0.0",
+    "validate-npm-package": "^1.0.5"
+  },
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "@nuxtjs/eslint-config": "^2.0.2",
+    "ava": "^3.6.0",
+    "eslint": "^6.8.0",
+    "standard-version": "^7.1.0"
+  }
+}
